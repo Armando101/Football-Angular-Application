@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  firebase: = {
+  firebase: {
     apiKey: 'AIzaSyBYptdTxjmxemAFt755fqzjrSSelwVsCas',
     authDomain: 'typescript-angular-d1b1f.firebaseapp.com',
     databaseURL: 'https://typescript-angular-d1b1f.firebaseio.com',
@@ -13,7 +13,7 @@ export const environment = {
     messagingSenderId: '979989608878',
     appId: '1:979989608878:web:29d07fc9109fc575f9703f',
     measurementId: 'G-YX9RZ593GY'
-  };
+  }
 };
 
 /*
