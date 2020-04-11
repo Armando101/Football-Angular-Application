@@ -1,10 +1,12 @@
 body {
-    margin: 0px;
     background: -webkit-linear-gradient(left, #25c481, #25b7c4);
     background: linear-gradient(to right, #25c481, #25b7c4);
   }
   section {
     margin: 50px;
+  }
+  p {
+    font-size: 1.5px;
   }
   
   h1 {
@@ -36,7 +38,7 @@ body {
   }
   
   th {
-    padding: 20px15px;
+    padding: 20px 15px;
     text-align: left;
     font-weight: 500;
     font-size: 12px;
@@ -202,7 +204,7 @@ body {
   
   .btn {
     background-color: #fff;
-    padding: 1em1.5em;
+    padding: 1em 1.5em;
     border-radius: 3px;
     text-decoration: none;
     i {

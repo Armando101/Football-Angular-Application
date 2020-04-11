@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TeamService, TeamsTableHeaders } from '../services/team.service';
 import { Observable } from 'rxjs';
-import { Team } from '../interfaces/team';
 import { take } from 'rxjs/operators';
+import { Team } from '../interfaces/team';
 import { Countries } from '../interfaces/player';
 
 @Component({
@@ -11,28 +11,26 @@ import { Countries } from '../interfaces/player';
   styleUrls: ['./team-table.component.scss']
 })
 export class TeamTableComponent implements OnInit {
-
-  // El signo pesos representa que teams es una variable asíncrona
+  // El signo pesos representa que teams es una variable asíncro
   public teams$: Observable<Team[]>;
-  public tableHeader = TeamsTableHeaders;
-  constructor(private teamService: TeamService) { }
+  public tableHeaders = TeamsTableHeaders;
 
-  ngOnInit(): void {
-    // Obtenemos los teams
+  constructor(private teamService: TeamService) {}
+
+  ngOnInit() {
     this.teams$ = this.teamService.getTeams();
-
-    // Obtenemos sólo el primer team
-    this.teamService.getTeams().pipe(take(1)).subscribe(teams => {
-      if (teams.length === 0) {
-        const team: Team = {
-          name: 'MyAmazingTeam',
-          country: Countries.Mexico,
-          players: null
-        };
-        this.teamService.addTeam(team);
-      }
-    });
-
+    this.teamService
+      .getTeams()
+      .pipe(take(1))
+      .subscribe(teams => {
+        if (teams.length === 0) {
+          const team: Team = {
+            name: 'MyAmazingTeam',
+            country: Countries.Argentina,
+            players: null
+          };
+          this.teamService.addTeam(team);
+        }
+      });
   }
-
 }
