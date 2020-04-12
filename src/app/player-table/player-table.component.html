@@ -24,7 +24,7 @@
     <div class="tbl-content-player">
         <table cellpadding="0" cellspacing="0" border="0">
             <tbody>
-                <tr **ngFor="let player of (players$ | async)">
+                <tr *ngFor="let player of (players$ | async)">
                     <th>{{player.name}}</th>
                     <th>{{player.lastName}}</th>
                     <th>{{player.position}}</th>
@@ -41,3 +41,4 @@
         </table>
     </div>
 </section>
+<app-player-dialog></app-player-dialog>
